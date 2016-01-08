@@ -1,0 +1,24 @@
+{
+  "name": "admin-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.1",
+    "body-parser": "^1.14.2",
+    "consign": "^0.1.2",
+    "cookie-parser": "^1.4.0",
+    "dotenv": "^1.2.0",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "seraph": "^0.14.0",
+    "seraph-model": "^0.7.5",
+    "ssl-root-cas": "^1.1.10",
+    "urlify": "^0.3.6"
+  }
+}
