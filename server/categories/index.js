@@ -29,7 +29,7 @@ module.exports = function (app) {
             res.send({
                 "error": true,
                 "errmsg": "Missing Category name",
-                "node": false
+                "response": false
             })
         } else {
             console.log(name);
@@ -38,8 +38,7 @@ module.exports = function (app) {
                 var sb = {}
                 sb.error = (err) ? true : false;
                 sb.errmsg = err;
-                sb.node = node;
-                console.log(node);
+                sb.response = node;
                 if (!err && parent != null && typeof node.id != "undefined") {
                     db.relate(parent, "has_child", node.id, function (err, relationship) {
                         if (err) {
@@ -64,7 +63,7 @@ module.exports = function (app) {
             category.read(id, function(err, node) {
                 sb.error = (err) ? true: false;
                 sb.errmsg = err;
-                sb.nodes = node;
+                sb.response = node;
                 next(sb);
             })
         }
@@ -73,7 +72,7 @@ module.exports = function (app) {
             category.findAll(function (err, all) {
                 sb.error = (err) ? true : false;
                 sb.errmsg = err;
-                sb.nodes = all;
+                sb.response = all;
                 next(sb);
             })
         }
@@ -83,14 +82,14 @@ module.exports = function (app) {
         if (!id) {
             sb.error = true;
             sb.errmsg = "Please specify an ID to delete";
-            sb.node = ""
+            sb.response = ""
             next(sb);
         } else {
             db.delete(id, 1, function (err, node) {
                 var sb = {}
                 sb.error = (err) ? true : false;
                 sb.errmsg = err;
-                sb.node = node;
+                sb.response = node;
                 next(sb);
             })
         }
@@ -113,7 +112,7 @@ module.exports = function (app) {
                     }, function(err, nodes){
                         sb.error = false;
                         sb.errmsg= err;
-                        sb.nodes = nodes;
+                        sb.response = nodes;
                         next(sb);
                     })
 
