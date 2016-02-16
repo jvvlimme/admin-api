@@ -122,7 +122,6 @@ module.exports = function (app) {
                 })
             })
         }
-
     }
 
     var searchMedia = function(q, next) {

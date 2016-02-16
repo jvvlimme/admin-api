@@ -93,6 +93,24 @@ module.exports = function(app) {
             })
         }
     }
+    var deleteBreed = function(id, next) {
+
+    }
+
+    var findBreed = function(params, next) {}
+
+    var getBreed = function(slug, next) {
+        es.seach({
+            index: "honden",
+            type: "breeds",
+            q:"slug:"+slug
+        }, function(err, result) {
+            sb = {}
+            sb.error = (err) ? true: false;
+            sb.errmsg = err;
+            sb.response = result;
+        })
+    }
 
     app.post("/breeds/add", function(req, res) {
         createBreed(JSON.parse(req.body.breed), function(sb) {
