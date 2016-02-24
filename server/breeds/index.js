@@ -63,7 +63,7 @@ module.exports = function(app) {
             sb.errmsg = "Please provide breed information";
             next(sb);
         } else {
-            breed.description = JSON.stringify (breed.description)
+            breed.description = JSON.stringify(breed.description)
             breed.slug = urlify(breed.name).toLowerCase();
             Breed.save(breed, function(err, node) {
                 if (err) {

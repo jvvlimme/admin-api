@@ -15,6 +15,7 @@
     "cookie-parser": "^1.4.0",
     "dotenv": "^1.2.0",
     "express": "^4.13.3",
+    "geocoder": "^0.2.2",
     "morgan": "^1.6.1",
     "seraph": "^0.14.0",
     "seraph-model": "^0.7.5",
